@@ -1,0 +1,34 @@
+{
+    "name": "indgy/profiler",
+    "type": "library",
+    "minimum-stability": "stable",
+    "description": "Application profiling utilities",
+    "keywords": [],
+    "homepage": "https://github.com/indgy/profiler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "indgy",
+            "email": "me@indgy.uk"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "psr/http-message": "^1.0",
+        "psr/http-server": "^1.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Indgy\\Profiler\\": "src/Profiler/"
+        }
+    },
+    "scripts": {
+        "analyse": "phpstan analyse src/DeviceDetection --level=0",
+        "api-docs": "php /opt/local/bin/doctum update ./doctum.config.php", 
+        "user-docs": "mkdocs build", 
+        "user-docs-serve": "mkdocs serve", 
+        "test-all": "phpunit --coverage-clover build/logs/clover.xml"
+    }
+}
